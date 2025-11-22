@@ -1,59 +1,73 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/*
+ * AI CHAT ASSISTANT DESIGN SYSTEM
+ * Pixel-perfect replication of the design reference
+ * Primary Colors: Teal (#2DBFAF), Dark Gray (#2C3E50)
+ * Typography: Inter font family
+ */
 
 :root {
-  /* Pure white background with crisp black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  /* Background System - Light gray background with white content areas */
+  --background: 0 0% 96%; /* #F5F5F5 */
+  --foreground: 0 0% 10%; /* #1A1A1A */
 
-  /* Clean white cards with black text */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  /* Card System - White cards with subtle shadows */
+  --card: 0 0% 100%; /* #FFFFFF */
+  --card-foreground: 0 0% 10%;
 
-  /* Popovers with white background */
+  /* Popover System */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  --popover-foreground: 0 0% 10%;
 
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
+  /* Primary: Teal brand color */
+  --primary: 174 65% 47%; /* #2DBFAF */
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondary: Dark gray for sidebar and sections */
+  --secondary: 210 29% 24%; /* #2C3E50 */
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Subtle gray with darker text */
+  /* Muted: Subtle grays for secondary text */
   --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  --muted-foreground: 0 0% 42%; /* #6B7280 */
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Accent: Teal accent for hover states */
+  --accent: 174 65% 47%;
+  --accent-foreground: 0 0% 100%;
 
   /* Destructive: Clean red */
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
-  --border: 0 0% 90%;
+  /* Borders: Subtle gray borders */
+  --border: 0 0% 90%; /* #E5E7EB */
   --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  --ring: 174 65% 47%;
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Border Radius System */
+  --radius: 1rem; /* 16px for cards */
+  --radius-button: 1.5rem; /* 24px for pill-shaped buttons */
 
-  /* Sidebar: Clean white with black text */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  /* Sidebar System - Dark gray sidebar */
+  --sidebar-background: 210 29% 24%; /* #2C3E50 */
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 174 65% 47%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-accent: 210 29% 20%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 210 29% 20%;
+  --sidebar-ring: 174 65% 47%;
+
+  /* Custom Design System Variables */
+  --teal-primary: #2DBFAF;
+  --teal-dark: #1FA294;
+  --dark-gray: #2C3E50;
+  --light-gray: #F5F5F5;
+  --text-dark: #1A1A1A;
+  --text-gray: #6B7280;
+  --border-gray: #E5E7EB;
 }
 
 .dark {
@@ -168,36 +182,102 @@ All colors MUST be HSL.
   border-color: hsl(var(--border));
 }
 
+/* Base Typography System */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-feature-settings: "rlig" 1, "calt" 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
 }
 
-/* Minimal, clean typography */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
+/* Typography Scale - matching design reference */
+h1 {
+  font-size: 3rem; /* 48px */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
   color: hsl(var(--foreground));
+  margin-bottom: 1rem;
 }
 
-/* Clean button styles */
+h2 {
+  font-size: 2rem; /* 32px */
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  line-height: 1.5;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+h5, h6 {
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  line-height: 1.5;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1rem;
+}
+
+/* Button Typography */
 button {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
-/* Subtle shadows for depth */
+/* Custom Shadows - matching design reference */
 .shadow-sm {
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.shadow-teal {
+  box-shadow: 0 2px 4px 0 rgba(45, 191, 175, 0.2);
+}
+
+/* Custom Utility Classes */
+.pill-button {
+  border-radius: var(--radius-button);
+}
+
+.card-rounded {
+  border-radius: var(--radius);
 }

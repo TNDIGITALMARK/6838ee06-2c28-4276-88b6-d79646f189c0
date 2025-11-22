@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "Synapse AI - Your Intelligent Chat Assistant",
+  description: "Experience intelligent, reliable, and efficient AI assistance for all your needs. Chat with our AI for writing, coding, learning, and more.",
 };
 
 export default function RootLayout({
